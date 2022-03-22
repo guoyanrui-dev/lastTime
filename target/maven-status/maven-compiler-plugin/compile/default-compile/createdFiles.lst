@@ -1,1 +1,3 @@
 com\test\client\testGetApi.class
+com\test\client\TestNg.class
+com\test\client\RestfulClient.class
