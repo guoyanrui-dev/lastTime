@@ -1,3 +1,5 @@
+com\test\client\SendRequest.class
 com\test\client\testGetApi.class
 com\test\client\TestNg.class
+com\test\code\Binary.class
 com\test\client\RestfulClient.class
