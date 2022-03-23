@@ -23,7 +23,6 @@ public class RestfulClient {
     int responseCode;
     JSONObject reponsebody;
     HashMap<String, String> reponseHeaders;
-
     //通过http获取请求反馈
     public void getResponse(String url) throws IOException {
         httpClient = HttpClients.createDefault();
