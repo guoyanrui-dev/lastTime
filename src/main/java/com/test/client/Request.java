@@ -35,7 +35,7 @@ public class Request {
         httpPost.setHeader("ContentType", "application/json");
         httpPost.setEntity(new UrlEncodedFormEntity(list));
         CloseableHttpResponse execute = client.execute(httpPost);
-        String string = EntityUtils.toString(execute.getEntity());
+        String string = EntityUtils.toString(execute.getEntity(),"utf-8");
         JSONObject jsonObject = JSON.parseObject(string);
         return jsonObject;
     }
@@ -46,8 +46,9 @@ public class Request {
         HttpGet httpGet = new HttpGet(url);
         httpGet.setHeader("ContentType", "application/json");
         CloseableHttpResponse execute = client.execute(httpGet);
-        String string = EntityUtils.toString(execute.getEntity());
-        return JSON.parseObject(string);
+        String string = EntityUtils.toString(execute.getEntity(),"utf-8");
+        JSONObject jsonObject = JSON.parseObject(string);
+        return jsonObject;
 
     }
 }

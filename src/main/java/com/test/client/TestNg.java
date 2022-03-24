@@ -1,6 +1,7 @@
 package com.test.client;
 
 import com.alibaba.fastjson.JSONObject;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -10,6 +11,8 @@ import java.util.Map;
  * @author guoyanrui on 2022/3/22
  */
 public class TestNg {
+
+
     public static void main(String[] args) throws IOException {
         Request request = new Request();
         String posturl = "https://api.apishop.net/common/postcode/getAddrs";
