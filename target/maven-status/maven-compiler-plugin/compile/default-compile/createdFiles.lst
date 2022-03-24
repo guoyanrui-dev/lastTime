@@ -1,3 +1,4 @@
+com\test\client\Request.class
 com\test\client\SendRequest.class
 com\test\client\testGetApi.class
 com\test\client\TestNg.class
