@@ -1,6 +1,7 @@
-com\test\client\Request.class
 com\test\client\SendRequest.class
+com\test\code\Binary.class
+com\test\code\April.class
+com\test\client\RestfulClient.class
+com\test\client\Request.class
 com\test\client\testGetApi.class
 com\test\client\TestNg.class
-com\test\code\Binary.class
-com\test\client\RestfulClient.class
