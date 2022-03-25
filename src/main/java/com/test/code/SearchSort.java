@@ -1,5 +1,7 @@
 package com.test.code;
 
+import redis.clients.jedis.Jedis;
+
 import java.util.Arrays;
 
 /**
@@ -73,9 +75,12 @@ public class SearchSort {
 
     public static void main(String[] args) {
         int[] nums = {1, 34, 56, 67, 98, 53, 97, 90, 43};
-//        new SearchSort().insertSort(nums);
+        new SearchSort().insertSort(nums);
 //        quiklySort(nums, 0, nums.length - 1);
-        new SearchSort().bubble(nums);
+//        new SearchSort().bubble(nums);
         System.out.println(Arrays.toString(nums));
+//        Jedis jedis = new Jedis("172.17.88.90",8990);
+//        String flst_2171192496 = jedis.get("flst_2171192496");
+//        System.out.println(flst_2171192496);
     }
 }
