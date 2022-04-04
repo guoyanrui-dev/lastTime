@@ -4,6 +4,7 @@ com\test\code\Binary.class
 com\test\repeat\Sort.class
 com\test\code\April.class
 com\test\client\RestfulClient.class
+com\test\repeat\SendGetRequest.class
 com\test\client\Request.class
 com\test\client\testGetApi.class
 com\test\client\TestNg.class
