@@ -1,5 +1,6 @@
 com\test\repeat\askBaiDu.class
 com\test\client\SendRequest.class
+com\test\repeat\One.class
 com\test\code\Binary.class
 com\test\repeat\Sort.class
 com\test\code\April.class
