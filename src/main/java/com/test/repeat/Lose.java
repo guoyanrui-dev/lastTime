@@ -59,17 +59,34 @@ public class Lose {
         }
         return -1;
     }
-//访问下百度试试
+
+    //charupaixu
+    public static void insertSort(int[] nums) {
+        for (int i = 1; i < nums.length; i++) {
+            int value = nums[i];
+            int index = i - 1;
+            while (index >= 0 && value < nums[index]) {
+                nums[index + 1] = nums[index];
+                index--;
+            }
+            nums[index + 1] = value;
+        }
+    }
+
+    //访问下百度试试
     public static void main(String[] args) throws IOException {
+        int[] nums={1,3,21,43,543,65,7657,54,86,6565};
         CloseableHttpClient client = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost("http://baidu.com");
-        httpPost.setHeader("ContentionType","application/json");
+        httpPost.setHeader("ContentionType", "application/json");
         List<NameValuePair> list = new ArrayList<>();
-        list.add(new BasicNameValuePair("key","value"));
+        list.add(new BasicNameValuePair("key", "value"));
         httpPost.setEntity(new UrlEncodedFormEntity(list));
         CloseableHttpResponse execute = client.execute(httpPost);
         String string = EntityUtils.toString(execute.getEntity());
 //        JSONObject jsonObject = JSON.parseObject(string);
         System.out.println(string);
+        insertSort(nums);
+        System.out.println(Arrays.toString(nums));
     }
 }
