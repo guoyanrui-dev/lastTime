@@ -38,9 +38,9 @@ public class SendGetRequest {
     public void postResponse(String url, Map<String, String> headers, Map<String, String> form) throws IOException {
         HttpPost httpPost = new HttpPost(url);
         List<NameValuePair> list = new ArrayList<>();
-        headers.forEach((key,value)->httpPost.setHeader(key,value));
-        form.forEach((name,value1)->{
-            list.add(new BasicNameValuePair(name,value1));
+        headers.forEach((key,value) -> httpPost.setHeader(key, value));
+        form.forEach((name, value1) -> {
+            list.add(new BasicNameValuePair(name, value1));
         });
         httpPost.setEntity(new UrlEncodedFormEntity(list));
         CloseableHttpResponse execute = client.execute(httpPost);
