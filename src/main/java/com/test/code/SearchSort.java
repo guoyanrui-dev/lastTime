@@ -73,12 +73,29 @@ public class SearchSort {
         quiklySort(nums, i + 1, right);
     }
 
+    public static int bier(int[] nums, int target) {
+        int i = 0;
+        int j = nums.length - 1;
+        while (i <= j) {
+            int middle = i + (j - i) / 2;
+            if (nums[middle] == target) {
+                return middle;
+            } else if (nums[middle] > target) {
+                j = middle - 1;
+            } else {
+                i = middle + 1;
+            }
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
         int[] nums = {1, 34, 56, 67, 98, 53, 97, 90, 43};
         new SearchSort().insertSort(nums);
 //        quiklySort(nums, 0, nums.length - 1);
 //        new SearchSort().bubble(nums);
-        System.out.println(Arrays.toString(nums));
+        int index = bier(nums, 56);
+        System.out.println(Arrays.toString(nums)+"+"+index);
 //        Jedis jedis = new Jedis("172.17.88.90",8990);
 //        String flst_2171192496 = jedis.get("flst_2171192496");
 //        System.out.println(flst_2171192496);
