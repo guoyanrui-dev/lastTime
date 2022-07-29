@@ -6,6 +6,8 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.sun.istack.internal.NotNull;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -13,6 +15,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 import java.util.zip.CheckedOutputStream;
 
 public class UrlConnection {
@@ -48,19 +51,45 @@ public class UrlConnection {
     }
 
     public static void main(String[] args) throws IOException {
-        String url = "http://11.164.95.218:8099/bin/search?auction&_sid_=1117251129629489&group_module=groupmeta_poi_detail&show_fields=all&sourcefrom=loadrunnertest&use_log=false&outfmt=json";
-//        Map<String,String> map = new HashMap();
+        String url = "http://api.apishop.net/common/postcode/getAddrs";
+        Map<String, Object> map = new HashMap();
         JSONObject json = new JSONObject();
-        json.put("apikey", "hBcUuaPacd9143701e460219607c97752d070b3082954ac");
-        String param = "{\"apikey\":\"hBcUuaPacd9143701e460219607c97752d070b3082954ac\"}";
-//        map.put("apikey","hBcUuaPacd9143701e460219607c97752d070b3082954ac");
+        json.put("apiKey", "hBcUuaPacd9143701e460219607c97752d070b3082954ac");
+        String param = "{\"apiKey\":\"hBcUuaPacd9143701e460219607c97752d070b3082954ac\"}";
+        map.put("apiKey", "hBcUuaPacd9143701e460219607c97752d070b3082954ac");
 //        JSONObject jsonObject = sendgetHttp(url,param);
 //        System.out.println(JSON.toJSONString(jsonObject, SerializerFeature.PrettyFormat));
-        String jsonObject = HttpRequest.get(url)
+        String jsonObject = HttpRequest.post(url)
+//                .header("Content-Type","application/json")
+                .form(map)
                 .execute()
                 .body();
-        JSONObject jsonObject1 = JSONObject.parseObject(jsonObject);
-        System.out.println(JSON.toJSONString(jsonObject1, SerializerFeature.PrettyFormat));
+        System.out.println(jsonObject);
+//        JSONObject jsonObject1 = JSONObject.parseObject(jsonObject);
+//        System.out.println(JSON.toJSONString(jsonObject1, SerializerFeature.PrettyFormat));
+    }
+
+    @Test
+    public static void getCity() {
+//        String url ="http://api.apishop.net/common/postcode/getAddrs";
+//        Map<String,Object> map = new HashMap<>();
+//        Map<String,String> header = new HashMap<>();
+//        map.put("apiKey","hBcUuaPacd9143701e460219607c97752d070b3082954ac");
+//        header.put("Content-Type","application/json");
+//        String str = HttpRequest.post(url)
+//                .form(map)
+//                .execute()
+//                .body();
+//        JSONObject jsonObject = JSONObject.parseObject(str);
+//        System.out.println(JSON.toJSONString(jsonObject,SerializerFeature.PrettyFormat));
+//        System.out.println(System.currentTimeMillis());
+
+        String url = "http://api.apishop.net/common/postcode/getAddrs?apiKey=hBcUuaPacd9143701e460219607c97752d070b3082954ac";
+        String response = HttpRequest.get(url)
+                .execute()
+                .body();
+        JSONObject jsonObject = JSONObject.parseObject(response);
+        Assert.assertEquals(jsonObject.get("statusCode"),"000000","返回信息不一致");
     }
 
 }
