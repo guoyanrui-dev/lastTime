@@ -8,6 +8,7 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.sun.istack.internal.NotNull;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import redis.clients.jedis.Jedis;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -71,25 +72,25 @@ public class UrlConnection {
 
     @Test
     public static void getCity() {
-//        String url ="http://api.apishop.net/common/postcode/getAddrs";
-//        Map<String,Object> map = new HashMap<>();
-//        Map<String,String> header = new HashMap<>();
-//        map.put("apiKey","hBcUuaPacd9143701e460219607c97752d070b3082954ac");
-//        header.put("Content-Type","application/json");
-//        String str = HttpRequest.post(url)
-//                .form(map)
-//                .execute()
-//                .body();
-//        JSONObject jsonObject = JSONObject.parseObject(str);
-//        System.out.println(JSON.toJSONString(jsonObject,SerializerFeature.PrettyFormat));
-//        System.out.println(System.currentTimeMillis());
-
-        String url = "http://api.apishop.net/common/postcode/getAddrs?apiKey=hBcUuaPacd9143701e460219607c97752d070b3082954ac";
-        String response = HttpRequest.get(url)
+        String url = "http://api.apishop.net/common/postcode/getAddrs";
+        Map<String, Object> map = new HashMap<>();
+        Map<String, String> header = new HashMap<>();
+        map.put("apiKey", "hBcUuaPacd9143701e460219607c97752d070b3082954ac");
+        header.put("Content-Type", "text/plain; charset=utf-8");
+        String str = HttpRequest.post(url)
+//                .addHeaders(header)
+                .form(map)
                 .execute()
                 .body();
-        JSONObject jsonObject = JSONObject.parseObject(response);
-        Assert.assertEquals(jsonObject.get("statusCode"),"000000","返回信息不一致");
-    }
+        JSONObject jsonObject = JSONObject.parseObject(str);
+        System.out.println(JSON.toJSONString(jsonObject, SerializerFeature.PrettyFormat));
+        System.out.println(System.currentTimeMillis());
 
+//        String url = "http://api.apishop.net/common/postcode/getAddrs?apiKey=hBcUuaPacd9143701e460219607c97752d070b3082954ac";
+//        String response = HttpRequest.get(url)
+//                .execute()
+//                .body();
+//        JSONObject jsonObject = JSONObject.parseObject(response);
+//        Assert.assertEquals(jsonObject.get("statusCode"),"000000","返回信息不一致");
+    }
 }
