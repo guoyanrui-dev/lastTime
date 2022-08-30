@@ -4,6 +4,7 @@ import cn.hutool.http.HttpRequest;
 import com.alibaba.fastjson.JSONObject;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 
 public class eightSixteen {
@@ -30,9 +31,9 @@ public class eightSixteen {
         quiklySort(nums, i + 1, right);
     }
 
-    public static String sendrequest(String url) {
+    public static String sendrequest(String url,Map<String,Object> body) {
         String body1 = HttpRequest.get(url)
-//                .form(body)
+                .form(body)
                 .execute()
                 .body();
         return body1;
@@ -42,10 +43,12 @@ public class eightSixteen {
         int[] nums = {21, 342, 6, 8, 4534553, 7676, 964, 121, 356, 7657, 458, 43};
         quiklySort(nums, 0, nums.length - 1);
         System.out.println(Arrays.toString(nums));
-
-        String url = "http://api.apishop.net/common/postcode/getAddrs?apiKey=hBcUuaPacd9143701e460219607c97752d070b3082954ac";
-        String string = sendrequest(url);
+        Map<String,Object> map = new HashMap<>();
+        map.put("apiKey","hBcUuaPacd9143701e460219607c97752d070b3082954ac");
+        String url = "http://api.apishop.net/common/postcode/getAddrs";
+        String string = sendrequest(url,map);
         JSONObject jsonObject = JSONObject.parseObject(string);
+        System.out.println(jsonObject);
     }
 
 }
