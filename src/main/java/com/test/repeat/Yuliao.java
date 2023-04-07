@@ -7,7 +7,7 @@ import com.alibaba.fastjson.JSONObject;
 
 public class Yuliao {
 
-
+//测试分布
 
     public static void main(String[] args) {
         String url = "http://lse2-search-data-factory.amap.test/us/queryLog";
