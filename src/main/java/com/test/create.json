@@ -1,0 +1,4 @@
+{
+ "https://api.es.xiaojukeji.com/river/Regulation/get": "{\"client_id\": \"029ce6c063b53a02a36427fe22ea18d7_test\",\n  \"company_id\": \"1125926143192877\"}",
+ "https://api.es.xiaojukeji.com/river/Approval/create":"{\n  \"access_token\": \"${access_token}\",\n  \"regulation_id\": \"1125927059351545\",\n  \"company_id\": \"1125926143192877\",\n  \"phone\": \"00016204527\",\n  \"approval_type\": 1,\n  \"sign\": \"${sign_md}\",\n  \"client_id\": \"029ce6c063b53a02a36427fe22ea18d7_test\",\n  \"timestamp\": \"${__time(,)}\",\n  \"reason\": \"reason_create\",\n  \"travel_detail\": {\n    \"category_control\": [\n      3,\n      4,\n      6,\n      9,\n      10,\n      11,\n      12\n    ],\n    \"end_city_rule\": 1,\n    \"start_city_rule\": 1,\n    \"start_date\": \"2023-11-08\",\n    \"end_date\": \"2023-12-31\",\n    \"train_total_count\": 2,\n    \"flight_total_count\": 2,\n    \"hotel_total_count\": 2,\n    \"pickup_total_count\": 2\n  }\n}\n"
+}
