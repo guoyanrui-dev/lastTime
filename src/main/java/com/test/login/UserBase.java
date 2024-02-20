@@ -45,9 +45,9 @@ public class UserBase {
         header.put("Accept-Language","zh-Hans;q=1");
         header.put("wsgsig","dd04-QI2rINZxahPcYRmzB7uVt2RNZS0vKGsFVYwvGYA8WQRutkuOp2zOKbcMuxShAoRnx9XmXi5CZMOqW9K0cd5hVWIBGardbaw7fE0mElVEYh2L9CLigckbQfcYw7AL7NRIdtOLZbE3FqY+87pNGq+OXbAawB2777cidhEvRoRe");
         String result = HttpRequest.get(url)
-//                .addHeaders(header)
-//                .form(map)
-//                .body(param)
+                .addHeaders(header)
+                .form(map)
+                .body(param)
                 .execute()
                 .body();
         System.out.println(result);

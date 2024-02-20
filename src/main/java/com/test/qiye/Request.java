@@ -5,7 +5,7 @@ import cn.hutool.http.HttpRequest;
 import cn.hutool.json.JSONObject;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.oracle.tools.packager.Log;
+//import com.oracle.tools.packager.Log;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class Request {
             JSONObject jsonObject1  = new JSONObject(hashMap);
             result = HttpRequest.get(url).header("content-type", "application/json").form(jsonObject1).execute().body();
         } else {
-            Log.info("未查询到此接口信息");
+//            Log.info("未查询到此接口信息");
         }
         return result;
     }
@@ -50,7 +50,7 @@ public class Request {
             Map<String, Object> mapparam = jsonbody.getInnerMap();
             return mapparam;
         } else {
-            Log.info("未查询到此接口信息");
+//            Log.info("未查询到此接口信息");
         }
         return map;
     }
