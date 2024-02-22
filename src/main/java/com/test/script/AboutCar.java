@@ -1,5 +1,10 @@
 package com.test.script;
 
+import cn.hutool.http.HttpRequest;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import org.testng.annotations.Test;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -55,6 +60,30 @@ public class AboutCar {
         quikly(nums, i + 1, right);
     }
 
+    @Test
+    public static void flowerJiu() {
+        for (int i = 1; i <= 9; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + "*" + i + "=" + i * j + "\t");
+            }
+            System.out.println();
+        }
+    }
+
+    public static String sendRequst(String url,Map map) {
+        String response = HttpRequest.get(url)
+                .body(map.toString())
+                .execute()
+                .body();
+        return response;
+    }
+    public static String sendRequst(String url) {
+        String response = HttpRequest.get(url)
+                .execute()
+                .body();
+        return response;
+    }
+
     public static void main(String[] args) {
         String str = "hjh";
         int[] nums = {1, 3, 2, 4, 6, 5, 7, 9, 8, 10};
@@ -64,12 +93,6 @@ public class AboutCar {
         bubble(nums);
         System.out.println(Arrays.toString(nums));
         getCount(str);
-        StringBuffer stringBuffer = new StringBuffer(str);
-        if (stringBuffer.reverse().toString().equals(str)) {
-            System.out.println("是回文字符串！");
-        } else {
-            System.out.println("不是回文串");
-        }
     }
 
 }
