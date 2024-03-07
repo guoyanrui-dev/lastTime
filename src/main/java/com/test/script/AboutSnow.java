@@ -1,6 +1,9 @@
 package com.test.script;
 
+import cn.hutool.core.util.RandomUtil;
+
 import java.util.Arrays;
+import java.util.Random;
 
 public class AboutSnow {
     public static void quaipaixu(int[] nums, int left, int right) {

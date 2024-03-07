@@ -18,7 +18,7 @@ public class Apitest {
     public static void getRegulationId(){
         String url = "https://api.es.xiaojukeji.com/river/Regulation/get";
         Map<String, Object> map = Request.getParamsMap(url);
-        TrainUtil trainUtil = new TrainUtil();
+        Util trainUtil = new Util();
         map.put("access_token", trainUtil.getAcess_token());
         map.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000));
         Map<String,String> map1 = new HashMap<>();
@@ -33,7 +33,7 @@ public class Apitest {
     //创建申请单
     @Test
     public static void create(){
-        TrainUtil trainUtil = new TrainUtil();
+        Util trainUtil = new Util();
         String url = "https://api.es.xiaojukeji.com/river/Approval/create";
         Map<String,Object> map = Request.getParamsMap(url);
         map.put("access_token",trainUtil.getAcess_token());
