@@ -1,12 +1,10 @@
-package com.test.qiye;
+package com.test.script;
 
 import cn.hutool.http.HttpRequest;
 //import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONObject;
 import com.alibaba.fastjson.JSON;
 //import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.JSONArray;
-import org.testng.annotations.Test;
 
 import java.io.*;
 import java.math.BigInteger;
@@ -19,13 +17,12 @@ public class Util {
     public static final String client_secret = "b543c583a191659c518712d9c9cd3d51";
     public static final String grant_type = "client_credentials";
     public static final String signKey = "1d5f4338101c9712de9a";
-    public static final String Host = "https://api.es.xiaojukeji.com";
+    public static final String Online_Host = "https://api.es.xiaojukeji.com";
     public static final String access_token = getAcess_token();
 
 
-
-    public  static String getAcess_token() {
-        String url = Host + "/river/Auth/authorize";
+    public static String getAcess_token() {
+        String url = Online_Host + "/river/Auth/authorize";
         Map map = new HashMap<>();
         map.put("client_id", client_id);
         map.put("client_secret", client_secret);
@@ -79,7 +76,7 @@ public class Util {
     }
 
     //获取签名sign
-    public  static String getSign(Map<String, String> params, String signKey) {
+    public static String getSign(Map<String, String> params, String signKey) {
         params.put("sign_key", signKey);
         String result = "";
         try {
@@ -107,7 +104,4 @@ public class Util {
         }
         return md5(result);
     }
-
-
-
 }

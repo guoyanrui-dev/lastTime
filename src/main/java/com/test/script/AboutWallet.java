@@ -2,13 +2,12 @@ package com.test.script;
 
 import cn.hutool.http.HttpRequest;
 import com.alibaba.fastjson.JSON;
-import com.test.qiye.Util;
 import org.testng.annotations.Test;
 
 import java.util.*;
 
 @Test
-public class AboutCar {
+public class AboutWallet {
     Util util = new Util();
 
     /*
@@ -16,7 +15,7 @@ public class AboutCar {
      *
      * */
     public void getCash() {
-        String url = util.Host + "/river/Card/get";
+        String url = util.Online_Host + "/river/Card/get";
         Map map = new HashMap<>();
         map.put("client_id", util.client_id);
         map.put("access_token", util.access_token);

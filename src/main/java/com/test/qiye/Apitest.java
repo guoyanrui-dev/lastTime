@@ -1,13 +1,11 @@
 package com.test.qiye;
 
-import cn.hutool.core.io.file.FileWriter;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.test.script.Util;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 @Test
