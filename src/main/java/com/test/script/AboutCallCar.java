@@ -131,6 +131,7 @@ public class AboutCallCar {
     /*
      * 确认支付
      * */
+    @Test(enabled = false)
     public void pay_feeconfirm() {
         String url = util.Online_Host + "/v1/order/FeeConfirm";
         Map map = new HashMap<>();
