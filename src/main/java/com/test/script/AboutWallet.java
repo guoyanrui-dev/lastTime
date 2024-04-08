@@ -15,7 +15,7 @@ public class AboutWallet {
      *
      * */
     public void getCash() {
-        String url = util.Online_Host + "/river/Card/get";
+        String url = util.Host + "/river/Card/get";
         Map map = new HashMap<>();
         map.put("client_id", util.client_id);
         map.put("access_token", util.access_token);

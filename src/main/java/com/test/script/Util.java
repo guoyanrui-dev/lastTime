@@ -17,12 +17,12 @@ public class Util {
     public static final String client_secret = "b543c583a191659c518712d9c9cd3d51";
     public static final String grant_type = "client_credentials";
     public static final String signKey = "1d5f4338101c9712de9a";
-    public static final String Online_Host = "https://api.es.xiaojukeji.com";
+    public static final String Host = "https://api.es.xiaojukeji.com";
     public static final String access_token = getAcess_token();
 
 
     public static String getAcess_token() {
-        String url = Online_Host + "/river/Auth/authorize";
+        String url = Host + "/river/Auth/authorize";
         Map map = new HashMap<>();
         map.put("client_id", client_id);
         map.put("client_secret", client_secret);

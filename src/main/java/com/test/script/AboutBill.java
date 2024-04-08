@@ -17,7 +17,7 @@ public class AboutBill {
      * 账单列表
      * */
     public void billList(){
-        String url = util.Online_Host + "/river/Bill/get";
+        String url = util.Host + "/river/Bill/get";
         Map map = new HashMap<>();
         map.put("client_id", util.client_id);
         map.put("access_token", util.access_token);
@@ -38,7 +38,7 @@ public class AboutBill {
     * 账单下载
     * */
     public void downLoadBill() throws IOException {
-        String url = util.Online_Host + "/river/Bill/download";
+        String url = util.Host + "/river/Bill/download";
         Map map = new HashMap<>();
         map.put("client_id", util.client_id);
         map.put("access_token", util.access_token);

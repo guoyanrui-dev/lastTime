@@ -24,7 +24,7 @@ public class AboutCallCar {
      * */
     @Test(priority = 2)
     public void sendCallCarRequest() {
-        String url = util.Online_Host + "/v1/order/Create/request";
+        String url = util.Host + "/v1/order/Create/request";
         Map map = new HashMap<>();
         map.put("client_id", util.client_id);
         map.put("access_token", util.access_token);
@@ -62,7 +62,7 @@ public class AboutCallCar {
      * */
     @Test(priority = 3)
     public void cancelOrder() {
-        String url = util.Online_Host + "/v1/order/Cancel";
+        String url = util.Host + "/v1/order/Cancel";
         Map map = new HashMap<>();
         map.put("client_id", util.client_id);
         map.put("access_token", util.access_token);
@@ -84,7 +84,7 @@ public class AboutCallCar {
      * */
     @Test(priority = 0)
     public String getOrderId() {
-        String url = util.Online_Host + "/v1/order/Create/orderId";
+        String url = util.Host + "/v1/order/Create/orderId";
         Map map = new HashMap<>();
         map.put("client_id", util.client_id);
         map.put("access_token", util.access_token);
@@ -104,7 +104,7 @@ public class AboutCallCar {
      * */
     @Test(priority = 1)
     public String priceCoupon() {
-        String url = util.Online_Host + "/v1/common/Estimate/priceCoupon";
+        String url = util.Host + "/v1/common/Estimate/priceCoupon";
         Map map = new HashMap<>();
         map.put("client_id", util.client_id);
         map.put("access_token", util.access_token);
@@ -133,12 +133,12 @@ public class AboutCallCar {
      * */
     @Test(enabled = false)
     public void pay_feeconfirm() {
-        String url = util.Online_Host + "/v1/order/FeeConfirm";
+        String url = util.Host + "/v1/order/FeeConfirm";
         Map map = new HashMap<>();
         map.put("client_id", util.client_id);
         map.put("access_token", util.access_token);
         map.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000));
-        map.put("order_id","1125929783659309");
+        map.put("order_id","1125929850755589");
         String sign = util.getSign(map, util.signKey);
         map.put("sign", sign);
         String body = HttpRequest.post(url)
