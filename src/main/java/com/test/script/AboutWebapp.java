@@ -3,6 +3,7 @@ package com.test.script;
 import cn.hutool.http.HttpRequest;
 import com.alibaba.fastjson.JSON;
 import org.testng.annotations.Test;
+import redis.clients.jedis.Jedis;
 
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
@@ -22,8 +23,9 @@ public class AboutWebapp {
         return chinese;
     }
 
+    //获取单点登录 token值
     @Test
-    public void getAuthCode(){
+    public void getAuthCode() {
         String url = util.Host + "/river/Login/getLoginEncryptStr";
         Map map = new HashMap<>();
         map.put("client_id", util.client_id);
@@ -39,13 +41,13 @@ public class AboutWebapp {
                 .execute()
                 .body();
         String response = JSON.parseObject(body).getJSONObject("data").get("encrypt_str").toString();
-        String auth_code = response.substring(response.indexOf("auth_code="),response.indexOf("&p"));
+        String auth_code = response.substring(response.indexOf("auth_code="), response.indexOf("&p"));
         System.out.println(response);
         System.out.println(auth_code);
     }
 
 
     public static void main(String[] args) throws UnsupportedEncodingException, InterruptedException {
-        System.out.println(new AboutWebapp().chineseToEncode("弘愿新时代"));
+        System.out.println(new AboutWebapp().chineseToEncode("北京市天安门广场"));
     }
 }
