@@ -30,21 +30,24 @@ public class AboutApproval {
     }
     @Test
     //删除差旅单
-    public  void cancelApproval(){
-        String url = util.Host + "/river/Approval/cancel";
-        Map map = new HashMap<>();
-        map.put("client_id", util.client_id);
-        map.put("access_token", util.access_token);
-        map.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000));
-        map.put("company_id", "1125926143192877");
-        map.put("approval_id", "1125931608763461");
-        map.put("is_force", "1");
-        String sign = util.getSign(map, util.signKey);
-        map.put("sign", sign);
-        String body = HttpRequest.post(url)
-                .form(map)
-                .execute()
-                .body();
-        System.out.println(JSON.parseObject(body));
+    public  void cancelApproval() {
+        String[] nums = {"1125932719699459","1125932657045565"};
+        for (int i = 0; i < nums.length; i++) {
+            String url = util.Host + "/river/Approval/cancel";
+            Map map = new HashMap<>();
+            map.put("client_id", util.client_id);
+            map.put("access_token", util.access_token);
+            map.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000));
+            map.put("company_id", "1125926143192877");
+            map.put("approval_id", nums[i]);
+            map.put("is_force", "1");
+            String sign = util.getSign(map, util.signKey);
+            map.put("sign", sign);
+            String body = HttpRequest.post(url)
+                    .form(map)
+                    .execute()
+                    .body();
+            System.out.println(JSON.parseObject(body));
+        }
     }
 }

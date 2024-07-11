@@ -13,10 +13,17 @@ import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
 public class Util {
-    public static final String client_id = "029ce6c063b53a02a36427fe22ea18d7_test";
-    public static final String client_secret = "b543c583a191659c518712d9c9cd3d51";
+    // 11188880000     cid = 1125926143192877
+//    public static final String client_id = "029ce6c063b53a02a36427fe22ea18d7_test";
+//    public static final String client_secret = "b543c583a191659c518712d9c9cd3d51";
+//    public static final String grant_type = "client_credentials";
+//    public static final String signKey = "1d5f4338101c9712de9a";
+
+    // 11155556666  cid= 1125928578703627
+    public static final String client_id = "52d123534aad9957b90eabec541f6f04";
+    public static final String client_secret = "f13665811eff07e1a4ce8b09c939c70f";
     public static final String grant_type = "client_credentials";
-    public static final String signKey = "1d5f4338101c9712de9a";
+    public static final String signKey = "d7b7D05C1833532B170d";
     public static final String Host = "https://api.es.xiaojukeji.com";
     public static final String access_token = getAcess_token();
 

@@ -31,9 +31,10 @@ public class AboutWebapp {
         map.put("client_id", util.client_id);
         map.put("access_token", util.access_token);
         map.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000));
-        map.put("company_id", "1125926143192877");
+        map.put("company_id", "1125928578703627");
         map.put("app_type", "2");
-        map.put("phone", "11188880000");
+//        map.put("employee_number", "8018232");
+        map.put("phone","00016236975");
         String sign = util.getSign(map, util.signKey);
         map.put("sign", sign);
         String body = HttpRequest.get(url)
@@ -41,9 +42,9 @@ public class AboutWebapp {
                 .execute()
                 .body();
         String response = JSON.parseObject(body).getJSONObject("data").get("encrypt_str").toString();
-        String auth_code = response.substring(response.indexOf("auth_code="), response.indexOf("&p"));
+//        String auth_code = response.substring(response.indexOf("auth_code="), response.indexOf("&p"));
         System.out.println(response);
-        System.out.println(auth_code);
+//        System.out.println(auth_code);
     }
 
 

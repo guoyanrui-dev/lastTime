@@ -40,7 +40,7 @@ public class AboutCallCar {
         map.put("end_name", "西二旗铭科苑");
         map.put("require_level", "600");
         map.put("car_poll", "1");
-        map.put("city", "20");
+        map.put("city", "1");
         map.put("passenger_phone", "11188880000");
         map.put("station_id", "4b6433474f73756d4f634e396b514875427978353371686c4c52725859655555");
         map.put("enable_lineup", "0");
@@ -114,7 +114,7 @@ public class AboutCallCar {
         map.put("tlng", "116.59478");
         map.put("require_level", "600");
         map.put("rule", "301");
-        map.put("city", "20");
+        map.put("city", "1");
         map.put("type", "0");
         map.put("passenger_phone", "11188880000");
         map.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000));
@@ -131,14 +131,14 @@ public class AboutCallCar {
     /*
      * 确认支付
      * */
-    @Test(enabled = false)
+//    @Test(enabled = false)
     public void pay_feeconfirm() {
         String url = util.Host + "/v1/order/FeeConfirm";
         Map map = new HashMap<>();
         map.put("client_id", util.client_id);
         map.put("access_token", util.access_token);
         map.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000));
-        map.put("order_id","1125929850755589");
+        map.put("order_id","1125934766084277");
         String sign = util.getSign(map, util.signKey);
         map.put("sign", sign);
         String body = HttpRequest.post(url)
