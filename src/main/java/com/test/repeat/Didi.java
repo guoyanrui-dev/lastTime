@@ -89,7 +89,7 @@ public class Didi {
         }
         nums[left] = nums[i];
         nums[i] = base;
-        quiklySort(nums, left, i - 1);
+        quiklySort(nums,left,i-1);
         quiklySort(nums, i + 1, right);
     }
 
