@@ -69,29 +69,28 @@ public class Didi {
         System.out.println(Arrays.toString(nums));
         HostInfo hostInfo = new HostInfo();
         System.out.println(hostInfo.getAddress());
-
-    //给定一个int数组，按从小到大进行排序
-    public static void quiklySort(int[] nums, int left, int right) {
-        if (left > right) return;
-        int i = left;
-        int j = right;
-        int base = nums[i];
-        while (i != j) {
-            while (nums[j] >= base && i < j) {
-                j--;
-            }
-            while (nums[i] <= base && i < j) {
-                i++;
-            }
-            int temp = nums[i];
-            nums[i] = nums[j];
-            nums[j] = temp;
-        }
-        nums[left] = nums[i];
-        nums[i] = base;
-        quiklySort(nums,left,i-1);
-        quiklySort(nums, i + 1, right);
     }
-
+        //给定一个int数组，按从小到大进行排序
+        public static void quiklySort ( int[] nums, int left, int right){
+            if (left > right) return;
+            int i = left;
+            int j = right;
+            int base = nums[i];
+            while (i != j) {
+                while (nums[j] >= base && i < j) {
+                    j--;
+                }
+                while (nums[i] <= base && i < j) {
+                    i++;
+                }
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+            }
+            nums[left] = nums[i];
+            nums[i] = base;
+            quiklySort(nums, left, i - 1);
+            quiklySort(nums, i + 1, right);
+        }
 
 }
